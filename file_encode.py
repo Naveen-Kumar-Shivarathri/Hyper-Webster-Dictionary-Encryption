@@ -2,9 +2,9 @@ import encoder
 
 inp_fn = raw_input("Enter the file name to encode:")
 enc_ln = input("Enter the encoding length:")
-
+sp_fn = inp_fn.split('.')
 input_fs = open(inp_fn,"r")
-rank_fs = open("encoded_file.vpe","wb+")
+rank_fs = open("encoded_"+sp_fn[0]+'_'+sp_fn[1]+".vpe","wb+")
 rank_fs.write(str(enc_ln)+"\n")
 
 data_chunk = input_fs.read(enc_ln)
